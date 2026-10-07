@@ -1,0 +1,23 @@
+# Body manifest — shell-sourcable (tick reads it with `.`; no parser needed)
+
+# identity
+BODY_ID=_TEMPLATE
+LOCATION=lab-bench            # physical place: "boat-deck", "dock-3", "kitchen-window"
+HOST=unspecified             # hostname for ssh ops
+SUBSTRATE=unoq               # unoq | laptop | oracle | prospector | ...
+
+# census — edit after onboarding: what this body can sense and actuate
+SENSORS=temperature,uptime,wifi-rssi
+ACTUATORS=led,gpio-header,serial
+
+# capabilities exposed to task `needs:` matching (comma list)
+CAPABILITIES=arduino-deploy,gpio,shell,lowpower
+
+# tick behavior
+TICK_SECONDS=120
+WITNESS=1                    # append daily witness lines
+
+# notes
+# Physical mounting, power source, network path, and what "commands this
+# place" means for this body. The agent reasons over LOCATION first,
+# BODY_ID second.
